@@ -5,7 +5,7 @@
 {% block content %}
 
     <ul>
-        {% for food in object_list %}
+        {% for food in foods %}
             <li>{{ food.iis_code }} | {{ food.name }} | {{ food.price }}</li>
         {% endfor %}
     </ul>
