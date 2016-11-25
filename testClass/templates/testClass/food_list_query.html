@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+    Test Class Query
+{% endblock %}
+{% block content %}
+
+    <ul>
+        {% for food in foods_query %}
+            <li>{{ food.iis_code }} | {{ food.name }} | {{ food.price }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
