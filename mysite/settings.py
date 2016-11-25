@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'testapp',
     'store',
     'testClass',
+    'testForm',
 ]
 
 MIDDLEWARE = [

@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^test/', include('testapp.urls')),
     url(r'^store/', include('store.urls')),
     url(r'^testclass/', include('testClass.urls')),
+    url(r'^testform/', include('testForm.urls')),
 ]
