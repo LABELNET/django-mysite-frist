@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>名称</th>
+        <th>地址</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for foo in content %}
+        <tr>
+            <td>{{ foo.name }}</td>
+            <td>{{ foo.address }}</td>
+            <td><a href="delete/{{ foo.id }}">删除</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h1>Add</h1>
+<form action="add" method="post">
+    {% csrf_token %}
+    <label>商店名称： </label>
+    <input name="name" type="text">
+    <label>商店地址 ： </label>
+    <input name="address" type="text">
+
+    <input value="提交" type="submit">
+</form>
+
+
+</body>
+</html>
