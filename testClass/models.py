@@ -7,5 +7,5 @@ food_default_name = "锅巴"
 class Food(models.Model):
     iis_code = models.CharField(max_length=32, default='mysite')
     name = models.CharField(max_length=20, default=food_default_name)
-    price = models.IntegerField(max_length=1000)
+    price = models.IntegerField()
     create_date = models.DateField(auto_now_add=Date.cls)
