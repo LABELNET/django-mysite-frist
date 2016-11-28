@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^store/', include('store.urls')),
     url(r'^testclass/', include('testClass.urls')),
     url(r'^testform/', include('testForm.urls')),
+    url(r'^api/', include('testrestapi.urls')),
 ]
