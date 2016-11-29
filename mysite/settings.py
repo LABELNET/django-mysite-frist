@@ -41,7 +41,12 @@ INSTALLED_APPS = [
     'testForm',
     'testrestapi',
     'rest_framework',
+    'rest_framework_docs',
 ]
+
+REST_FRAMEWORK_DOCS = {
+    'HIDE_DOCS': True
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

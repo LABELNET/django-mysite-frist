@@ -2,6 +2,7 @@
 
 from rest_framework import generics
 from rest_framework import mixins
+from rest_framework import viewsets
 
 from .models import Party
 from .serializers import PartySerializer
@@ -35,3 +36,8 @@ class PartyDetail(mixins.RetrieveModelMixin,
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
+
+
+class PartyListSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Party.objects.all()
+    serializer_class = PartySerializer
