@@ -12,3 +12,4 @@ class Party(models.Model):
 
     class Meta:
         ordering = ('create_date',)
+
