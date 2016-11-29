@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'testClass',
     'testForm',
     'testrestapi',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
