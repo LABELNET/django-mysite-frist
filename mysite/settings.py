@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'testrestapi',
     'rest_framework',
     'rest_framework_docs',
+    'rest_framework_swagger',
 ]
 
 REST_FRAMEWORK_DOCS = {
