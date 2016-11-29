@@ -1,11 +1,12 @@
 # Create your views here.
-
+from django.contrib.auth.models import User
 from rest_framework import generics
 from rest_framework import mixins
 from rest_framework import viewsets
 
 from .models import Party
 from .serializers import PartySerializer
+from .serializers import UserSerializer
 
 
 class PartyList(mixins.ListModelMixin,
@@ -41,3 +42,11 @@ class PartyDetail(mixins.RetrieveModelMixin,
 class PartyListSet(viewsets.ReadOnlyModelViewSet):
     queryset = Party.objects.all()
     serializer_class = PartySerializer
+
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
