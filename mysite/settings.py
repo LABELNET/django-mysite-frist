@@ -43,10 +43,20 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_docs',
     'rest_framework_swagger',
+    'rest_framework.authtoken',
 ]
 
+#rest Framework docs Ture的时候，不可访问
 REST_FRAMEWORK_DOCS = {
     'HIDE_DOCS': False
+}
+
+#rest framework auth 认证
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
 }
 
 MIDDLEWARE = [
