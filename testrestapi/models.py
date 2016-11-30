@@ -18,8 +18,17 @@ class Party(models.Model):
         ordering = ('create_date',)
 
 
-#初始化token
+# 为每个用户添加token验证
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
+
+'''
+#from django.contrib.auth.models import User
+
+@receiver(post_save, sender=User)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
+'''

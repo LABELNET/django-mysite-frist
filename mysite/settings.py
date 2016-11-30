@@ -46,13 +46,16 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 ]
 
-#rest Framework docs Ture的时候，不可访问
+# rest Framework docs Ture的时候，不可访问
 REST_FRAMEWORK_DOCS = {
     'HIDE_DOCS': False
 }
 
-#rest framework auth 认证
+# rest framework auth 认证
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     )
