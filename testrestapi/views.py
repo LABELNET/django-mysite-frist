@@ -2,8 +2,8 @@
 from django.contrib.auth.models import User
 from rest_framework import generics
 from rest_framework import mixins
+from rest_framework import versioning
 from rest_framework import viewsets
-from rest_framework.authtoken.models import Token
 
 from .models import Party
 from .serializers import PartySerializer
@@ -48,6 +48,7 @@ class PartyListSet(viewsets.ReadOnlyModelViewSet):
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    versioning_class = versioning.QueryParameterVersioning  # 版本
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)

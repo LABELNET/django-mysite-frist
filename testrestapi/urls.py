@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^detail/(?P<pk>[0-9]+)$', PartyDetail.as_view()),
     url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^userlist/', UserList.as_view()),
+    url(r'^(?P<version>(v1|v2))/users/', UserList.as_view()),
 ]
