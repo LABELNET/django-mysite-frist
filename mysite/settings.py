@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'testClass',
     'testForm',
     'testrestapi',
+    'testrestapi1',
     'rest_framework',
     'rest_framework_docs',
     'rest_framework_swagger',

@@ -9,11 +9,6 @@ from .models import Party
 from .serializers import PartySerializer
 from .serializers import UserSerializer
 
-#view token验证
-def create_auth_token(sender, instance=None, created=False, **kwargs):
-    if created:
-        Token.objects.create(user=instance)
-
 
 class PartyList(mixins.ListModelMixin,
                 mixins.CreateModelMixin,
