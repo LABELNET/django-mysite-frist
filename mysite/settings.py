@@ -62,7 +62,8 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',#分页
     'PAGE_SIZE': 2,
-    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning' #版本
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning', #版本
+    'EXCEPTION_HANDLER': 'mysite.util.TestException.custom_exception_handler',# exception
 
 }
 
