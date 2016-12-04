@@ -1,14 +1,13 @@
 from django.http import HttpResponse
 from rest_framework import generics
 from rest_framework.renderers import JSONRenderer
-from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from mysite.util import JsonUtil
 from testrestapi.models import Party
 from testrestapi.serializers import PartySerializer
 from testrestapi1.models import Person
-from testrestapi1.serializer import PersonSerializer
+from testrestapi1.serializer import PersonSerializer, Person1Serializer
 
 
 class PartyList(generics.ListCreateAPIView):
@@ -28,7 +27,10 @@ class PersonListRespnse(APIView):
         return JSONResponse(serializer.data)
 
 
-Response
+class PersonList1(generics.ListCreateAPIView):
+    queryset = Person.objects.all()
+    serializer_class = Person1Serializer
+
 
 class JSONResponse(HttpResponse):
     """
