@@ -49,3 +49,6 @@ class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     versioning_class = versioning.QueryParameterVersioning  # 版本
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
